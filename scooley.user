@@ -1,0 +1,64 @@
+// ==UserScript==
+// @name           Randymode
+// @namespace      *
+// @include        http://*
+// @include        https://*
+// @version        0.55
+// ==/UserScript==
+
+(function() {
+	var f = false;
+	function doStuff(n) {
+		if (n.nodeType == Node.TEXT_NODE) {
+			if (n.textContent) {
+				n.textContent = n.textContent.replace(/iPad/ig, "tampon");
+				n.textContent = n.textContent.replace(/Apple/g, "Snapple");
+				n.textContent = n.textContent.replace(/you /ig, "scooleycakes ");
+				n.textContent = n.textContent.replace(/they /ig, "dem peeps ");
+				n.textContent = n.textContent.replace(/microsoft/ig, "Microsoft (your owners)");
+				n.textContent = n.textContent.replace(/Sarah/g, "Captain Sarah");
+				n.textContent = n.textContent.replace(/ the /g, " ze ");
+				n.textContent = n.textContent.replace(/hyper/ig, "Sniper");
+				n.textContent = n.textContent.replace(/customers/ig, "Ice Pirates");
+				n.textContent = n.textContent.replace(/reddit/ig, "herpes");
+				n.textContent = n.textContent.replace(/representative/ig, "dick");
+				n.textContent = n.textContent.replace(/elect/ig, "erect");
+				n.textContent = n.textContent.replace(/Windows/ig, "Windows 7.1 Ultimate Enterprise Sellout Edition 2014");
+				n.textContent = n.textContent.replace(/Satya/ig, "Satya 'Male Privilege'");
+				n.textContent = n.textContent.replace(/Randy/ig, "Cunt Destroyer (lvl 70)");
+				n.textContent = n.textContent.replace(/entire/ig, "such completely");
+				n.textContent = n.textContent.replace(/good/ig, "so brave");
+				n.textContent = n.textContent.replace(/women/ig, "rage units");
+				n.textContent = n.textContent.replace(/twitter/ig, "clitter");
+				n.textContent = n.textContent.replace(/people/ig, "vagina worshippers");
+				n.textContent = n.textContent.replace(/celebrity/ig, "alien");
+				n.textContent = n.textContent.replace(/photo/ig, "nude photo");
+				n.textContent = n.textContent.replace(/ebola/ig, "anal leakage");
+				n.textContent = n.textContent.replace(/Rob/g, "Rob 'Big Hot Rod'");
+				n.textContent = n.textContent.replace(/\bin\b/ig, " balls deep in ");
+				n.textContent = n.textContent.replace(/U\.?S\.?/g, "Romulan Empire");
+				n.textContent = n.textContent.replace(/\bgay\b/ig, " gray ");
+				n.textContent = n.textContent.replace(/Seattle/ig, "Mos Eisley");
+				n.textContent = n.textContent.replace(/developer/ig, "finger-painter");
+				n.textContent = n.textContent.replace(/Seattle/ig, "Mos Eisley");
+				n.textContent = n.textContent.replace(/virtual/ig, "literal");
+				n.textContent = n.textContent.replace(/senior/ig, "señor");
+				n.textContent = n.textContent.replace(/likes/ig, "jerked off to");
+				n.textContent = n.textContent.replace(/like/ig, "will jerk off to");
+				n.textContent = n.textContent.replace(/everyone/ig, "all the peeps");
+				n.textContent = n.textContent.replace(/everything/ig, "all the things");
+				n.textContent = n.textContent.replace(/\bmen\b/ig, " manly oppressors ");
+				n.textContent = n.textContent.replace(/\bman\b/ig, " manly oppressor ");
+			}
+		}
+		Array.prototype.forEach.call(n.childNodes, doStuff);
+	}
+
+	document.addEventListener('DOMCharacterDataModified', function(e) {
+		if (f) { return; }
+		f = true;
+		doStuff(e.relatedNode);
+		f = false;
+	}, false);
+	setTimeout(function() { doStuff(document); }, 800);
+})();
